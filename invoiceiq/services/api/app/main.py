@@ -20,7 +20,7 @@ def _build_database_url() -> str:
     name = os.getenv("DB_NAME", "invoiceiq")
     user = os.getenv("DB_USER", "invoice")
     password = os.getenv("DB_PASSWORD", "invoice")
-    return f"mysql://{user}:{password}@{host}:{port}/{name}"
+    return f"mysql+pymysql://{user}:{password}@{host}:{port}/{name}"
 
 
 DATABASE_URL = _build_database_url()
